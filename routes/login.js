@@ -10,6 +10,26 @@ const bcrypt = require("bcryptjs");
 
 const jwt = require("jsonwebtoken");
 
+require("dotenv/config");
+
+router.post("/admin", async (req, res) => {
+  try {
+    if(req.body.email !== process.env.ADMIN_EMAIL) {
+      res.json("Incorrect Email/Password.")
+    }
+    if (req.body.password !== process.env.ADMIN_PASS) {
+      res.json("Incorrect Email/Password.")
+    }
+    else {
+      res.json({
+        status: "success",
+      })
+    }
+  } catch (err) {
+    res.json("Error", err);
+  }
+})
+
 router.post("/", async (req, res) => {
   const { error } = LoginValidation(req.body);
 

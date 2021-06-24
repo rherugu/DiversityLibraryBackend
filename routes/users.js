@@ -67,7 +67,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.get("/:userId", verify, async (req, res) => {
+router.get("/userid/:userId", async (req, res) => {
   try {
     const user = await User.findById(req.params.userId);
 
