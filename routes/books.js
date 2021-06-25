@@ -15,6 +15,7 @@ router.get("/", async (req, res) => {
 
 router.post("/search", async (req, res) => {
   const query = req.body.query;
+  console.log(query);
 
   var result;
   var result1;
