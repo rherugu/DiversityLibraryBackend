@@ -65,3 +65,8 @@ env
 /env
 /.env
 ./env
+
+/node_modules
+npm-debug.log
+.DS_Store
+/*.env
