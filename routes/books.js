@@ -101,6 +101,7 @@ router.post("/", async (req, res) => {
   const books = new Book({
     title: req.body.title,
     author: req.body.author,
+    cover: req.body.cover,
     checkedOut: false,
   });
   try {
